@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sital Hospital Sidebar</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; display: flex; height: 100vh; background-color: #f4f4f4; }
+
+        /* Main purple sidebar - now just a toggle trigger */
+        .nav-bar { width: 60px; background-color: #4a148c; display: flex; flex-direction: column; align-items: center; padding-top: 20px; color: white; }
+        .nav-icon { margin-bottom: 25px; cursor: pointer; font-size: 20px; }
+
+        /* Activity Panel */
+        .activity-panel { width: 250px; background-color: #262626; color: white; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.2); transition: width 0.3s ease; }
+        .activity-panel.hidden { display: none; }
+        
+        .activity-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .activity-header h2 { font-size: 16px; margin: 0; }
+        
+        .close-btn { cursor: pointer; font-size: 18px; }
+
+        /* Links */
+        .menu-item { padding: 12px 0; border-bottom: 1px solid #444; cursor: pointer; font-size: 14px; color: #ccc; }
+        .menu-item:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- Primary Navigation -->
+    <div class="nav-bar">
+        <!-- Removed extra icon divs, kept only the toggle trigger -->
+        <div class="nav-icon" onclick="toggleSidebar()">☰</div>
+    </div>
+
+    <!-- Activity Panel -->
+    <div class="activity-panel" id="activityPanel">
+        <div class="activity-header">
+            <h2>ACTIVITY</h2>
+            <span class="close-btn" onclick="toggleSidebar()">✕</span>
+        </div>
+        
+        <div class="menu-item">
+            <a href="New Patient.html" style="color: inherit; text-decoration: none;">New patient</a>
+        </div>
+        <div class="menu-item">
+            <a href="Old Patient.html" style="color: inherit; text-decoration: none;">Old patient</a>
+        </div>
+        <div class="menu-item">OPD Summary</div>
+        <div class="menu-item">OPD Receipt</div>
+        <div class="menu-item">Receipt Report</div>
+        <div class="menu-item">Due Receipt</div>
+        <div class="menu-item">Group by OPD</div>
+        <div class="menu-item">Doctor by OPD</div>
+        <div class="menu-item">Service by OPD</div>
+        <div class="menu-item">Department Wise OPD</div>
+        <div class="menu-item">OPD Information</div>
+        <div class="menu-item">OPD Doctor Ref list</div>
+        <div class="menu-item">Family wise OPD</div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const panel = document.getElementById('activityPanel');
+            panel.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
